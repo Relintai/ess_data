@@ -247,6 +247,26 @@ var _folders : Array = [
 ]
 
 func _ready():
+	var dir : Directory = Directory.new()
+	
+	
+	if dir.file_exists("res://ess_data.json"):
+		var file : File = File.new()
+		
+		if file.open("res://ess_data.json", File.READ) == OK:
+			var s : String = file.get_as_text()
+			
+			_folders = parse_json(s)
+			
+			file.close()
+#	else:
+#		var file : File = File.new()
+#
+#		if file.open("res://ess_data.json", File.WRITE) == OK:
+#			file.store_string(to_json(_folders))
+#
+#			file.close()
+	
 	_main_container = get_node(main_container)
 	
 	_resource_scene = resource_scene.instance()
