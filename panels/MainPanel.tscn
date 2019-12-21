@@ -15,6 +15,7 @@ __meta__ = {
 }
 resource_scene = ExtResource( 2 )
 folder_entry_button_scene = ExtResource( 3 )
+base_folder = "res://data/"
 main_container = NodePath("HSplitContainer/MarginContainer")
 folder_entry_container_path = NodePath("HSplitContainer/ScrollContainer/VBoxContainer")
 
